@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
+import type { Config } from "tailwindcss";
+import scrollbarHide from "tailwind-scrollbar-hide"; 
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    scrollbarHide, 
+  ],
 };
 
-export default nextConfig;
+export default config;

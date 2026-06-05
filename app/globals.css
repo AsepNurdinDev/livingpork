@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Tailwind v4 Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Theme Colors */
+@theme {
+  --color-dark-bg: #121212;
+  --color-dark-card: #1e1e1e;
+  --color-cream: #fbf7f0;
+  --color-gold: #c9a84c;
+  --color-red: #b91c1c;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* DEFAULT (DARK) */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  background-color: #121212;
+  color: #fbf7f0;
+
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* LIGHT MODE (saat class .dark dihapus / toggle ke terang) */
+html:not(.dark),
+html:not(.dark) body {
+  background-color: #f8f6f2;
+  color: #1c1917;
+}
+
+/* Scrollbar Hide Utility */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  color-scheme: light dark;
+}
+
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
