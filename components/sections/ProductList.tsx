@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const WA_NUMBER = '628123456789'
+const WA_NUMBER = '6287858577888'
 
 const products = [
   { image: '/daging1.png', name: 'Daging Has Dalam (Tenderloin)', desc: 'Potongan paling empuk, cocok untuk steak & panggang.', price: 'Rp 85.000', unit: '/ 500g', badge: 'Bestseller', badgeColor: 'bg-red-700 text-white' },

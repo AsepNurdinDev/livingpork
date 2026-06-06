@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const WA_NUMBER = '628123456789'
+const WA_NUMBER = '6287858577888'
 const WA_MESSAGE = encodeURIComponent(
   'Halo Living Pork, saya mau pesan daging babi segar!'
 )

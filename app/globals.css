@@ -15,15 +15,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* DEFAULT (DARK) */
+/* DEFAULT (LIGHT) */
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
 
-  background-color: #121212;
-  color: #fbf7f0;
+  background-color: #f8f6f2;
+  color: #1c1917;
 
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 
@@ -32,11 +32,11 @@ body {
     color 0.3s ease;
 }
 
-/* LIGHT MODE (saat class .dark dihapus / toggle ke terang) */
-html:not(.dark),
-html:not(.dark) body {
-  background-color: #f8f6f2;
-  color: #1c1917;
+/* DARK MODE (saat class .dark ditambahkan) */
+html.dark,
+html.dark body {
+  background-color: #121212;
+  color: #fbf7f0;
 }
 
 /* Scrollbar Hide Utility */
