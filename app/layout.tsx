@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/src/components/ThemeProvider"; 
-import Navbar from "@/components/layout/Navbar"; 
+import { ThemeProvider } from "@/src/components/ThemeProvider";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,20 +10,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // 1. Tambahkan suppressHydrationWarning di sini
     <html lang="id" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Script ini berjalan SEBELUM paint pertama, mencegah flash */}
+        {/*
+          Script jalan SEBELUM paint pertama — tidak ada flash.
+          Default: LIGHT. Dark hanya aktif jika user sebelumnya memilih dark.
+          Sengaja TIDAK pakai prefers-color-scheme agar default selalu terang.
+        */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  if (localStorage.getItem('theme') === 'dark') {
                     document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
                   }
                 } catch(e) {}
               })();

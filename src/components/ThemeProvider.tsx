@@ -9,21 +9,28 @@ const ThemeContext = createContext({
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(() => {
-    // Saat SSR, kembalikan false. Saat client, baca dari DOM yang sudah diset script inline
+    // SSR: return false. Client: baca dari DOM yang sudah diset script inline di layout
     if (typeof window === 'undefined') return false;
     return document.documentElement.classList.contains('dark');
-  });
+  })
+
+  // Sync ulang setelah hydration — memastikan state React cocok dengan DOM
+  useEffect(() => {
+    setDarkMode(document.documentElement.classList.contains('dark'))
+  }, [])
 
   const toggleDarkMode = () => {
-    if (darkMode) {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-      setDarkMode(false)
-    } else {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-      setDarkMode(true)
-    }
+    setDarkMode((prev) => {
+      const next = !prev
+      if (next) {
+        document.documentElement.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+      }
+      return next
+    })
   }
 
   return (
@@ -33,5 +40,4 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-// Custom hook agar mudah dipanggil di komponen lain (seperti Navbar)
 export const useTheme = () => useContext(ThemeContext)
