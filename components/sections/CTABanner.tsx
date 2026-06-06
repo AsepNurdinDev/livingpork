@@ -180,7 +180,7 @@ export default function CTABanner() {
                       Alamat
                     </p>
                     <h3 className="text-stone-900 dark:text-[#fbf7f0] font-bold text-lg">
-                      Jl. Seruni, NO 3, BR. Taman Darmasaba
+                      Jl. Seruni No.3, Br. Taman, Darmasaba, Abiansemal,
                     </h3>
                     <p className="text-stone-500 dark:text-[#fbf7f0]/60 text-sm">
                       Badung, Bali

@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import { articles } from '@/src/lib/articles'
+import Image from "next/image";
+import Link from "next/link";
+import { articles } from "@/src/lib/articles";
 
 export default function ArticlesSection() {
-  const preview = articles.slice(0, 4)
+  const preview = articles.slice(0, 4);
 
   return (
     <section
@@ -28,7 +29,6 @@ export default function ArticlesSection() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-amber-500/10 dark:bg-[#c9a84c]/10 blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
@@ -39,11 +39,15 @@ export default function ArticlesSection() {
 
             <h2 className="font-serif font-black text-4xl md:text-5xl text-stone-900 dark:text-[#fbf7f0] leading-tight">
               Artikel
-              <span className="text-amber-600 dark:text-[#c9a84c] italic"> Living Pork</span>
+              <span className="text-amber-600 dark:text-[#c9a84c] italic">
+                {" "}
+                Living Pork
+              </span>
             </h2>
 
             <p className="text-stone-500 dark:text-[#fbf7f0]/60 mt-4 max-w-xl leading-relaxed">
-              Tips memasak, resep pilihan, dan inspirasi hidangan terbaik menggunakan daging babi premium.
+              Tips memasak, resep pilihan, dan inspirasi hidangan terbaik
+              menggunakan daging babi premium.
             </p>
           </div>
 
@@ -62,7 +66,9 @@ export default function ArticlesSection() {
             "
           >
             Lihat Semua Artikel
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
           </Link>
         </div>
 
@@ -86,7 +92,12 @@ export default function ArticlesSection() {
               {/* Cover / Emoji */}
               <div className="relative h-44 overflow-hidden bg-stone-100 dark:bg-[#2a2a2a] flex items-center justify-center">
                 <span className="text-[80px] transition-transform duration-500 group-hover:scale-110 select-none">
-                  {article.emoji}
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -110,7 +121,9 @@ export default function ArticlesSection() {
 
                 <div className="flex items-center gap-1.5 mt-5 text-red-700 dark:text-[#b91c1c] font-semibold text-sm">
                   Baca Selengkapnya
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
@@ -135,8 +148,7 @@ export default function ArticlesSection() {
             Lihat Semua Artikel →
           </Link>
         </div>
-
       </div>
     </section>
-  )
+  );
 }

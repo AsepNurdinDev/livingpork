@@ -1,22 +1,54 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import Image from 'next/image'
+import { useRef } from "react";
+import Image from "next/image";
 
 const items = [
-  { type: 'image', src: '/gallery/produk1.jpg', title: 'Tenderloin Premium', category: 'Produk' },
-  { type: 'image', src: '/gallery/produk2.jpg', title: 'Pork Belly Segar', category: 'Produk' },
-  { type: 'image', src: '/gallery/produksi1.jpg', title: 'Area Produksi', category: 'Produksi' },
-  { type: 'video', src: '/gallery/video1.mp4', title: 'Proses Pemotongan', category: 'Video' },
-  { type: 'image', src: '/gallery/produksi2.jpg', title: 'Pengemasan Produk', category: 'Produksi' },
-  { type: 'image', src: '/gallery/produk3.jpg', title: 'Pork Ribs', category: 'Produk' },
-]
+  {
+    type: "image",
+    src: "/produk/iga-perut.png",
+    title: "Iga Babi",
+    category: "Produk",
+  },
+  {
+    type: "image",
+    src: "/produk/jeroan-babi.png",
+    title: "Jeroan Babi",
+    category: "Produk",
+  },
+  {
+    type: "image",
+    src: "/poto.jpeg",
+    title: "Area Produksi",
+    category: "Produksi",
+  },
+  {
+    type: "video",
+    src: "/pemotongan.mp4",
+    title: "Proses Pemotongan",
+    category: "Video",
+  },
+  {
+    type: "video",
+    src: "/pengemasan.mp4",
+    title: "Pengemasan Produk",
+    category: "Video",
+  }, 
+  {
+    type: "image",
+    src: "/produk/sam-sam.png",
+    title: "Samcam Babi",
+    category: "Produk",
+  },
+];
 
 export default function Gallery() {
-  const sliderRef = useRef<HTMLDivElement>(null)
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => sliderRef.current?.scrollBy({ left: -400, behavior: 'smooth' })
-  const scrollRight = () => sliderRef.current?.scrollBy({ left: 400, behavior: 'smooth' })
+  const scrollLeft = () =>
+    sliderRef.current?.scrollBy({ left: -400, behavior: "smooth" });
+  const scrollRight = () =>
+    sliderRef.current?.scrollBy({ left: 400, behavior: "smooth" });
 
   return (
     <section
@@ -36,7 +68,6 @@ export default function Gallery() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-amber-500/10 dark:bg-[#c9a84c]/10 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4">
-
         {/* Header */}
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 bg-red-100 dark:bg-[#b91c1c]/20 border border-red-200 dark:border-[#b91c1c]/30 text-red-700 dark:text-[#b91c1c] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-5">
@@ -46,18 +77,21 @@ export default function Gallery() {
 
           <h2 className="font-serif font-black text-4xl md:text-6xl text-stone-900 dark:text-[#fbf7f0]">
             Galeri
-            <span className="text-amber-600 dark:text-[#c9a84c] italic"> Kami</span>
+            <span className="text-amber-600 dark:text-[#c9a84c] italic">
+              {" "}
+              Kami
+            </span>
           </h2>
 
           <p className="text-stone-500 dark:text-[#fbf7f0]/60 mt-4 max-w-xl">
-            Lihat kualitas produk, proses produksi, dan dokumentasi aktivitas Living Pork secara langsung.
+            Lihat kualitas produk, proses produksi, dan dokumentasi aktivitas
+            Living Pork secara langsung.
           </p>
         </div>
 
         {/* Slider Wrapper */}
         <div className="relative group">
-
-          {/* Tombol Kiri */}
+          {/* Tombol Kiri (Posisi top diubah ke 130px agar presisi di tengah media kartu) */}
           <button
             onClick={scrollLeft}
             className="
@@ -71,12 +105,23 @@ export default function Gallery() {
               opacity-0 group-hover:opacity-100 group-hover:translate-x-2
             "
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
             </svg>
           </button>
 
-          {/* Tombol Kanan */}
+          {/* Tombol Kanan (Posisi top diubah ke 130px agar presisi di tengah media kartu) */}
           <button
             onClick={scrollRight}
             className="
@@ -90,8 +135,19 @@ export default function Gallery() {
               opacity-0 group-hover:opacity-100 group-hover:-translate-x-2
             "
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
             </svg>
           </button>
 
@@ -115,7 +171,19 @@ export default function Gallery() {
               >
                 {/* Media */}
                 <div className="relative h-[260px] overflow-hidden bg-stone-100 dark:bg-[#2a2a2a]">
-                  {item.type === 'image' ? (
+                  {item.type === "video" ? (
+                    /* 🛠️ PERBAIKAN DI BAGIAN INI 🛠️ */
+                    <video
+                      src={item.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      controls
+                      preload="auto"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
                     <Image
                       src={item.src}
                       alt={item.title}
@@ -123,13 +191,11 @@ export default function Gallery() {
                       sizes="(max-width: 768px) 300px, 360px"
                       className="object-cover transition-transform duration-700 hover:scale-110"
                     />
-                  ) : (
-                    <video src={item.src} controls className="w-full h-full object-cover" />
                   )}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
-                  <span className="absolute top-4 left-4 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="absolute top-4 left-4 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full z-[5]">
                     {item.category}
                   </span>
                 </div>
@@ -150,9 +216,11 @@ export default function Gallery() {
 
         {/* Mobile Hint */}
         <div className="md:hidden text-center mt-6">
-          <span className="text-stone-400 dark:text-[#fbf7f0]/40 text-sm">← Geser untuk melihat galeri →</span>
+          <span className="text-stone-400 dark:text-[#fbf7f0]/40 text-sm">
+            ← Geser untuk melihat galeri →
+          </span>
         </div>
       </div>
     </section>
-  )
+  );
 }

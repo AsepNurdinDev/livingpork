@@ -5,7 +5,7 @@ import { useRef } from 'react'
 
 interface ScrollRevealProps {
   children: React.ReactNode
-  delay?: number        // delay antar section (ms)
+  delay?: number    
   direction?: 'up' | 'down' | 'left' | 'right'
   className?: string
 }
