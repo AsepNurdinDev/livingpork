@@ -10,7 +10,7 @@ export interface Article {
 }
 
 export const articles: Article[] = [
-  {
+    {
     slug: 'tips-memasak-iga-babi',
     emoji: '🍖',
     category: 'Tips Memasak',

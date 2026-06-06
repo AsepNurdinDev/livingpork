@@ -22,7 +22,9 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { label: 'Produk', href: '/#produk' },
+    {label: 'Home', href: '/#home'},
+    { label: 'Tentang', href: '/about' },
+    { label: 'Produk', href: '/produk' },
     { label: 'Keunggulan', href: '/#keunggulan' },
     { label: 'Cara Pesan', href: '/#order' },
     { label: 'Artikel', href: '/artikel' },
