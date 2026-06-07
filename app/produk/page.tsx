@@ -71,23 +71,7 @@ export default function ProdukPage() {
   });
 
   return (
-    <main className="bg-[#f8f6f2] dark:bg-[#111110] pt-30 text-stone-900 dark:text-[#fbf7f0] min-h-screen transition-colors duration-300">
-      <div className="absolute inset-0 z-0 block lg:hidden ">
-        {slidesMobile.map((slide, i) => (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt={slide.label}
-            fill
-            priority={i === 0}
-            className="object-cover object-top transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0 }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-black/60 dark:bg-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
-      </div>
-
+    <main className="bg-[#f8f6f2] dark:bg-[#111110] text-stone-900 dark:text-[#fbf7f0] pt-20 min-h-screen transition-colors duration-300">
       {/* ══ JUDUL SECTION — di bawah banner ══ */}
       <div className="bg-[#f8f6f2] dark:bg-[#111110] px-6 pt-10 pb-6 transition-colors duration-300">
         <div className="max-w-6xl mx-auto">
@@ -100,10 +84,12 @@ export default function ProdukPage() {
           <div className="w-12 h-[3px] bg-[#c9a84c] mt-4" />
         </div>
       </div>
-      {/* ══ FILTER KATEGORI — tidak sticky ══ */}
-      <div className="bg-[#f8f6f2] dark:bg-[#111110] transition-colors duration-300">
-        <div className="max-w-6xl mx-auto px-4 pt-6 pb-6 border-b border-stone-200 dark:border-[#2a2a2a]">
-          <div className="flex gap-2 flex-wrap">
+
+      {/* ══ FILTER & SEARCH ══ */}
+      <div className="sticky top-0 z-30 bg-[#f8f6f2]/95 dark:bg-[#111110]/95 backdrop-blur-md border-b border-stone-200 dark:border-[#2a2a2a] transition-colors duration-300">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
+          {/* Kategori */}
+          <div className="flex gap-2 flex-wrap flex-1">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -118,18 +104,9 @@ export default function ProdukPage() {
               </button>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* ══ SEARCH BAR — sticky ══ */}
-      {/* 💡 border-b sudah dihapus dari div pembungkus utama di bawah ini */}
-      <div className="sticky top-0 z-30 bg-[#f8f6f2]/90 dark:bg-[#111110]/90 backdrop-blur-md transition-colors duration-300">
-        {/* 💡 border-b dipindahkan ke sini, dan ditambahkan pb-3 agar jaraknya pas */}
-        <div className="max-w-6xl mx-auto px-4 py-3 pb-3 flex items-center justify-between gap-3 border-b border-stone-200 dark:border-[#2a2a2a]">
-          <span className="text-xs text-stone-400 dark:text-[#555] hidden sm:block">
-            {filtered.length} produk ditemukan
-          </span>
-          <div className="relative w-full sm:w-64">
+          {/* Search */}
+          <div className="relative w-full sm:w-56 shrink-0">
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400"
               fill="none"
@@ -153,9 +130,8 @@ export default function ProdukPage() {
           </div>
         </div>
       </div>
-
       {/* ══ PRODUCT GRID ══ */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 pb-24 sm:pb-16">
         <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <div className="text-center py-24 text-stone-400 dark:text-[#555]">

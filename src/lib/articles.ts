@@ -12,7 +12,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: 'cara-mengolah-daging-babi',
-    image: '/artikel/artikel1.png',
+    image: '/artikel/pengolahan1.png',
     category: 'Tips Memasak',
     date: '1 Juni 2025',
     readTime: '4 menit baca',
@@ -30,7 +30,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'cara-menyimpan-daging-babi',
-    image: '/artikel/artikel2.png',
+    image: '/artikel/penyimpanan.png',
     category: 'Tips',
     date: '8 Juni 2025',
     readTime: '3 menit baca',
@@ -47,7 +47,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'cara-memilih-daging-babi-berkualitas',
-    image: '/artikel/artikel3.jpg',
+    image: '/produk/samcam-skin-of.png',
     category: 'Edukasi',
     date: '15 Juni 2025',
     readTime: '4 menit baca',
@@ -65,7 +65,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'resep-siu-yuk-kulit-renyah',
-    image: '/artikel/artikel4.jpg',
+    image: '/artikel/resep.png',
     category: 'Resep',
     date: '22 Juni 2025',
     readTime: '5 menit baca',
@@ -81,7 +81,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'babi-guling-rumahan',
-    image: '/artikel/artikel5.jpg',
+    image: '/artikel/begul.png',
     category: 'Resep',
     date: '29 Juni 2025',
     readTime: '5 menit baca',
@@ -97,7 +97,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'char-siu-babi-panggang-merah',
-    image: '/artikel/artikel6.jpg',
+    image: '/artikel/resep2.png',
     category: 'Resep',
     date: '5 Juli 2025',
     readTime: '4 menit baca',
@@ -113,7 +113,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'sup-kaki-babi-jahe',
-    image: '/artikel/artikel7.jpg',
+    image: '/artikel/sup.png',
     category: 'Resep',
     date: '12 Juli 2025',
     readTime: '4 menit baca',

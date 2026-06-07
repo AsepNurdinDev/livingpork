@@ -14,12 +14,12 @@ export default function Home() {
     <>
       <Hero />
 
-      <ScrollReveal>
-        <Features />
-      </ScrollReveal>
-
       <ScrollReveal delay={100}>
         <ProductList />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Features />
       </ScrollReveal>
 
       <ScrollReveal>

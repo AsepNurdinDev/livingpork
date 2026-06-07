@@ -1,31 +1,33 @@
+import Image from 'next/image'
+
 const features = [
   {
-    icon: '🥩',
+    image: '/salinan/2.png',
     title: 'Daging Babi Kualitas Premium',
     desc: 'Setiap potongan dipilih secara selektif dengan standar tinggi untuk mempertahankan kesegaran optimal, tekstur sempurna, dan cita rasa alami yang autentik.',
   },
   {
-    icon: '🧼',
+    image: '/freeze.png',
     title: 'Higienis & Tersertifikasi',
     desc: 'Seluruh proses penanganan, pemotongan, hingga pengemasan menerapkan standar sanitasi ketat untuk menjamin keamanan pangan (food safety).',
   },
   {
-    icon: '🚚',
+    image: '/truk.jpeg',
     title: 'Distribusi Cepat & Terjaga',
     desc: 'Sistem rantai dingin (cold chain) terintegrasi memastikan suhu produk tetap stabil hingga tiba di tangan Anda dalam kondisi sesegar mungkin.',
   },
   {
-    icon: '💰',
+    image: '/harga.png',
     title: 'Harga Kompetitif, Kualitas Konsisten',
     desc: 'Struktur harga terbaik untuk pembelian eceran (retail) maupun grosir (wholesale) tanpa mengorbankan konsistensi mutu produk.',
   },
   {
-    icon: '🤝',
+    image: '/poto.jpeg',
     title: 'Kontinuitas Suplai Terpercaya',
     desc: 'Kapasitas produksi andal menjamin stabilitas pasokan rutin secara tepat waktu untuk mendukung kelancaran operasional bisnis HOREKA Anda.',
   },
   {
-    icon: '✂️',
+    image: '/cuting.png',
     title: 'Custom Cutting Sesuai Kebutuhan',
     desc: 'Layanan pemotongan dan pengemasan khusus yang dipersonalisasi sesuai spesifikasi menu usaha Anda maupun konsumsi pribadi.',
   },
@@ -67,7 +69,6 @@ export default function Features() {
                 bg-white dark:bg-[#1e1e1e]
                 border border-stone-200 dark:border-[#2e2e2e]
                 rounded-2xl overflow-hidden
-                p-6
                 cursor-default
                 transition-all duration-300
                 hover:-translate-y-1.5
@@ -76,40 +77,40 @@ export default function Features() {
               "
             >
               {/* Top gold line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
-              {/* Number */}
-              <div className="font-sans text-[22px] font-bold tracking-[0.12em] text-[#c9a84c] opacity-50 mb-3">
-                {String(i + 1).padStart(2, '0')}
+              {/* Image */}
+              <div className="relative h-40 w-full overflow-hidden">
+                <Image
+                  src={f.image}
+                  alt={f.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                {/* Number overlay */}
+                <div className="absolute bottom-3 left-4 font-sans text-[22px] font-bold tracking-[0.12em] text-white opacity-40">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
               </div>
 
-              {/* Icon */}
-              <div className="
-                w-11 h-11 rounded-xl mb-4
-                flex items-center justify-center text-xl
-                bg-stone-100 dark:bg-[#2a2a2a]
-                border border-stone-200 dark:border-[#383838]
-                group-hover:bg-amber-50 group-hover:border-[#c9a84c]/25
-                dark:group-hover:bg-[#2e2a1e] dark:group-hover:border-[#c9a84c]/25
-                transition-all duration-300
-              ">
-                {f.icon}
+              {/* Content */}
+              <div className="p-6">
+                {/* Title */}
+                <h3 className="
+                  font-serif font-bold text-[15px] mb-2
+                  text-stone-900 dark:text-[#fbf7f0]
+                  group-hover:text-[#c9a84c]
+                  transition-colors duration-300
+                ">
+                  {f.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-sans text-[12.5px] leading-relaxed text-stone-500 dark:text-[#a8a29e]">
+                  {f.desc}
+                </p>
               </div>
-
-              {/* Title */}
-              <h3 className="
-                font-serif font-bold text-[15px] mb-2
-                text-stone-900 dark:text-[#fbf7f0]
-                group-hover:text-[#c9a84c]
-                transition-colors duration-300
-              ">
-                {f.title}
-              </h3>
-
-              {/* Description */}
-              <p className="font-sans text-[12.5px] leading-relaxed text-stone-500 dark:text-[#a8a29e]">
-                {f.desc}
-              </p>
             </div>
           ))}
         </div>

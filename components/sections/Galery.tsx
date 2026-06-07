@@ -33,14 +33,50 @@ const items = [
     src: "/pengemasan.mp4",
     title: "Pengemasan Produk",
     category: "Video",
-  }, 
+  },
   {
     type: "image",
     src: "/produk/sam-sam.png",
     title: "Samcam Babi",
     category: "Produk",
   },
-];
+  {
+    type: "video",
+    src: "/pruduksi1.mp4",
+    title: "Proses Pengemasan",
+    category: "Video",
+  },
+    {
+    type: "video",
+    src: "/pengemasan2.mp4",
+    title: "Proses Pengemasan",
+    category: "Video",
+  },
+  {
+    type: "video",
+    src: "/produksi2.mp4",
+    title: "Proses Pengemasan",
+    category: "Proses Pengemasan",
+  },
+  {
+    type: "video",
+    src: "/pengiriman.mp4",
+    title: "Proses Pengiriman",
+    category: "Video",
+  },
+    {
+    type: "video",
+    src: "/pengiriman2.mp4",
+    title: "Proses Pengiriman",
+    category: "Video",
+  },
+  {
+    type: "video",
+    src: "/orderan.mp4",
+    title: "Packing Orderan",
+    category: "Pengemasan",
+  },
+]
 
 export default function Gallery() {
   const sliderRef = useRef<HTMLDivElement>(null);

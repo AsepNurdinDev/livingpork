@@ -22,31 +22,45 @@ export default async function ArtikelDetailPage({ params }: PageProps) {
   return (
     <main className="bg-[#f8f6f2] dark:bg-[#111110] min-h-screen transition-colors duration-300">
       {/* ══ HERO IMAGE ══ */}
-      <section className="relative w-full h-[55vh] min-h-[360px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+      <section className="relative w-full h-[55vh] min-h-[360px] overflow-hidden bg-gradient-to-br from-[#1a1408] via-[#2c1f0e] to-[#0f0d09]">
+        {/* Gold shimmer top */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-80" />
+
+        {/* Diagonal gold grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
             backgroundImage: `repeating-linear-gradient(45deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 50px)`,
           }}
         />
 
-        {/* Category + back button overlay */}
+        {/* Radial glow center */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#c9a84c18_0%,_transparent_70%)]" />
+
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+        {/* Category + title overlay */}
         <div className="absolute bottom-0 left-0 right-0 px-6 pb-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-3">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-red-700 text-white">
                 {article.category}
               </span>
-              <span className="text-white/50 text-xs">{article.date}</span>
-              <span className="w-1 h-1 rounded-full bg-white/30" />
-              <span className="text-white/50 text-xs">{article.readTime}</span>
+              <span className="text-[#c9a84c]/70 text-xs">{article.date}</span>
+              <span className="w-1 h-1 rounded-full bg-[#c9a84c]/40" />
+              <span className="text-[#c9a84c]/70 text-xs">
+                {article.readTime}
+              </span>
             </div>
-            <h1 className="font-serif font-black text-3xl md:text-5xl text-white leading-tight">
+            <h1 className="font-serif font-black text-3xl md:text-5xl text-white leading-tight drop-shadow-lg">
               {article.title}
             </h1>
           </div>
         </div>
+
+        {/* Gold shimmer bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
       </section>
 
       {/* ══ CONTENT ══ */}
@@ -73,12 +87,23 @@ export default async function ArtikelDetailPage({ params }: PageProps) {
         </Link>
 
         {/* Excerpt */}
-        <div className="border-l-[3px] border-[#c9a84c] pl-5 py-3 bg-amber-50/50 dark:bg-[#c9a84c]/5 rounded-r-2xl mb-10">
+        {/* Excerpt */}
+        <div className="border-l-[3px] border-[#c9a84c] pl-5 py-3 bg-amber-50/50 dark:bg-[#c9a84c]/5 rounded-r-2xl mb-6">
           <p className="text-base md:text-lg text-stone-700 dark:text-[#fbf7f0]/80 font-medium leading-relaxed italic">
             {article.excerpt}
           </p>
         </div>
 
+        {/* Article image */}
+        <div className="relative w-full h-[400px] rounded-2xl overflow-hidden mb-10 shadow-lg">
+          <Image
+            src={article.image}
+            alt={article.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         {/* Article body */}
         <div className="space-y-5">
           {Array.isArray(article.content) ? (
