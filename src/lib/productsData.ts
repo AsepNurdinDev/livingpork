@@ -19,7 +19,7 @@ export interface Product {
 export const products: Product[] = [
   {
     slug: 'samcam-skin-on',
-    image: '/produk/samcam-skin-on.png',
+    image: '/salinan/samcam-skin-on.png',
     gallery: ['/produk/samcam-skin-on.png'],
     name: 'Samcam Skin On',
     desc: 'Perut babi dengan kulit, cocok untuk siu yuk dan panggang.',

@@ -119,48 +119,12 @@ export default function AboutPreview() {
         </div>
       </section>
 
-      {/* ══════ PROFIL / TIMELINE ══════ */}
-      <section className="py-20 px-6 bg-white dark:bg-[#161614] transition-colors duration-300">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="mb-14">
-              <span className="text-[#b91c1c] text-xs font-bold tracking-[0.2em] uppercase">Perjalanan Kami</span>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mt-3 leading-tight">
-                Profil <em className="text-[#c9a84c] not-italic italic">Living Pork</em>
-              </h2>
-              <div className="w-10 h-[3px] bg-[#c9a84c] mt-5" />
-            </div>
-          </FadeIn>
-
-          <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-stone-200 dark:bg-[#2a2a2a] -translate-x-1/2" />
-            <div className="space-y-12">
-              {milestones.map((m, i) => (
-                <FadeIn key={i} delay={i * 120}>
-                  <div className={`relative flex gap-8 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 text-left' : 'md:pl-16 text-left md:text-right'}`}>
-                      <div className="bg-[#f8f6f2] dark:bg-[#1e1e1e] border border-stone-200 dark:border-[#2e2e2e] rounded-2xl p-6 hover:border-[#c9a84c] dark:hover:border-[#c9a84c] transition-colors duration-300 ml-12 md:ml-0">
-                        <div className="text-[#c9a84c] font-serif font-black text-4xl mb-2 opacity-60">{m.year}</div>
-                        <h3 className="font-serif font-bold text-lg mb-2 text-stone-900 dark:text-[#fbf7f0]">{m.title}</h3>
-                        <p className="text-stone-500 dark:text-[#a8a29e] text-sm leading-relaxed">{m.desc}</p>
-                      </div>
-                    </div>
-                    <div className="absolute left-8 md:left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#c9a84c] border-4 border-white dark:border-[#161614] shadow-md z-10" />
-                    <div className="hidden md:block md:w-1/2" />
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══════ STANDAR KAMI ══════ */}
       <section className="py-24 px-6 bg-[#f8f6f2] dark:bg-[#121212] transition-colors duration-300">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-14">
-              <span className="text-[#b91c1c] text-xs font-bold tracking-[0.2em] uppercase">Standar Kami</span>
+              <span className="text-[#b91c1c] text-xl font-bold tracking-[0.2em] uppercase">Standar Kami</span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold mt-3 leading-tight">
                 Dari Produksi<br />
                 <em className="text-[#c9a84c] not-italic italic">hingga Meja Anda</em>

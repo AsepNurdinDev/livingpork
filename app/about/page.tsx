@@ -220,7 +220,8 @@ export default function About() {
             </div>
             <blockquote className="mt-8 pl-5 border-l-2 border-[#c9a84c]">
               <p className="text-stone-800 dark:text-[#e8e0d0] font-serif italic text-lg leading-snug">
-                "Kepercayaan pelanggan adalah aset terbesar yang harus dijaga."
+                &quot;Kepercayaan pelanggan adalah aset terbesar yang harus
+                dijaga.&quot;
               </p>
               <cite className="text-[#c9a84c] text-xs tracking-widest uppercase not-italic mt-2 block">
                 — Living Pork

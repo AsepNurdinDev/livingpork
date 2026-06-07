@@ -66,6 +66,7 @@ export default function Footer() {
                 </svg>
                 +62 878-5857-7888
               </a>
+              <a href="">Email: arindaniwayan98@gmail.com</a>
             </div>
           </div>
         </div>
