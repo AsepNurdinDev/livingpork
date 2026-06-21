@@ -70,8 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Living Pork",
-    description:
-      "Daging babi segar berkualitas tinggi dan terpercaya.",
+    description: "Daging babi segar berkualitas tinggi dan terpercaya.",
     images: ["/og-image.jpg"],
   },
 
@@ -86,7 +85,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="id"
+      className="scroll-smooth"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -102,6 +106,7 @@ export default function RootLayout({
           }}
         />
       </head>
+
       <body className="antialiased">
         <ThemeProvider>
           <ScrollToTop />
