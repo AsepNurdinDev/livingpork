@@ -189,14 +189,7 @@ export default function ProdukPage() {
                       </div>
 
                       <div className="mt-5 flex items-end justify-between">
-                        <div>
-                          <div className="text-amber-600 dark:text-[#c9a84c] text-2xl font-black">
-                            {p.price}
-                          </div>
-                          <div className="text-stone-400 dark:text-[#555] text-xs mt-0.5">
-                            {p.unit}
-                          </div>
-                        </div>
+                        <div></div>
                         <div
                           className={`flex items-center gap-1.5 text-xs font-semibold ${p.inStock ? "text-green-600 dark:text-green-500" : "text-red-500"}`}
                         >
